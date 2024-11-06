@@ -5,12 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+            padding: 20px;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .button {
+            background: var(--tg-theme-button-color);
+            color: var(--tg-theme-button-text-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px 0;
+            display: block;
+            width: 100%;
+        }
+
+        .user-info {
+            background: var(--tg-theme-secondary-bg-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Моё первое Telegram Mini App</h1>
         
-        <button class="button" onclick="showAlert()">Показать уведомление</button>
+        <button class="button" onclick="showAlert()">ПИЗДЕЦ</button>
         <button class="button" onclick="showUserInfo()">Информация о пользователе</button>
         <button class="button" onclick="toggleMainButton()">Показать/скрыть главную кнопку</button>
         <button class="button" onclick="sendData()">Отправить данные в бот</button>
