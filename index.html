@@ -5,50 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <meta name="ngrok-skip-browser-warning" content="true">
-    <script>
-        fetch(window.location.href, {
-            headers: {
-                'ngrok-skip-browser-warning': 'true'
-            }
-        });
-    </script>
-    <style>
-        body {
-            color: var(--tg-theme-text-color);
-            background: var(--tg-theme-bg-color);
-            padding: 20px;
-            margin: 0;
-            font-family: sans-serif;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .button {
-            background: var(--tg-theme-button-color);
-            color: var(--tg-theme-button-text-color);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            margin: 5px 0;
-            width: 100%;
-        }
-
-        .user-info {
-            background: var(--tg-theme-secondary-bg-color);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 10px 0;
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
