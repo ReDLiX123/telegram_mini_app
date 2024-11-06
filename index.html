@@ -1,105 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Telegram Mini App</title>
+    <title>RPG Mini Game</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <style>
-        body {
-            color: var(--tg-theme-text-color);
-            background: var(--tg-theme-bg-color);
-            padding: 20px;
-            margin: 0;
-            font-family: sans-serif;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .button {
-            background: var(--tg-theme-button-color);
-            color: var(--tg-theme-button-text-color);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            margin: 5px 0;
-            display: block;
-            width: 100%;
-        }
-
-        .user-info {
-            background: var(--tg-theme-secondary-bg-color);
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
-            display: none;
-        }
-    </style>
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/ui.css">
 </head>
 <body>
     <div class="container">
-        <h1>Моё первое Telegram Mini App</h1>
-        
-        <button class="button" onclick="showAlert()">ПИЗДЕЦ</button>
-        <button class="button" onclick="showUserInfo()">Информация о пользователе</button>
-        <button class="button" onclick="toggleMainButton()">Показать/скрыть главную кнопку</button>
-        <button class="button" onclick="sendData()">Отправить данные в бот</button>
-
-        <div id="userInfo" class="user-info"></div>
+        <div id="gameInterface"></div>
     </div>
 
-    <script>
-        let tg = window.Telegram.WebApp;
-        tg.expand();
-        tg.ready();
-
-        // Показ уведомления
-        function showAlert() {
-            tg.showAlert('Привет! Это тестовое сообщение.');
-        }
-
-        // Информация о пользователе
-        function showUserInfo() {
-            const user = tg.initDataUnsafe.user;
-            const userInfo = document.getElementById('userInfo');
-            userInfo.style.display = 'block';
-            userInfo.innerHTML = `
-                <p>👤 Имя: ${user.first_name}</p>
-                ${user.username ? `<p>🔤 Username: @${user.username}</p>` : ''}
-                <p>🆔 ID: ${user.id}</p>
-                <p>📱 Версия приложения: ${tg.version}</p>
-                <p>🎨 Тема: ${tg.colorScheme}</p>
-            `;
-        }
-
-        // Управление главной кнопкой
-        let isMainButtonVisible = false;
-        function toggleMainButton() {
-            if (!isMainButtonVisible) {
-                tg.MainButton.text = "Главная кнопка";
-                tg.MainButton.show();
-                tg.MainButton.onClick(function(){
-                    tg.showAlert("Нажата главная кнопка!");
-                });
-            } else {
-                tg.MainButton.hide();
-            }
-            isMainButtonVisible = !isMainButtonVisible;
-        }
-
-        // Отправка данных в бот
-        function sendData() {
-            const data = {
-                action: "test",
-                timestamp: Date.now()
-            };
-            tg.sendData(JSON.stringify(data));
-            tg.showAlert("Данные отправлены в бот!");
-        }
-    </script>
+    <!-- Скрипты -->
+    <script src="js/game/player.js"></script>
+    <script src="js/game/combat.js"></script>
+    <script src="js/game/inventory.js"></script>
+    <script src="js/ui/interface.js"></script>
+    <script src="js/ui/animations.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

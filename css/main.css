@@ -1,0 +1,23 @@
+body {
+    color: var(--tg-theme-text-color);
+    background: var(--tg-theme-bg-color);
+    padding: 20px;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.button {
+    background: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px 0;
+    width: 100%;
+}
