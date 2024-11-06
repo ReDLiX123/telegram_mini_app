@@ -1,0 +1,54 @@
+.character-panel {
+    background: var(--tg-theme-secondary-bg-color);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.character-info {
+    margin-bottom: 15px;
+}
+
+.character-info h2 {
+    margin: 0 0 15px 0;
+    color: var(--tg-theme-text-color);
+}
+
+.stats {
+    display: grid;
+    gap: 10px;
+}
+
+.stat-bar {
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.health-bar {
+    height: 100%;
+    background: #ff4444;
+    transition: width 0.3s ease;
+}
+
+.stat-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.stat-info p {
+    margin: 5px 0;
+}
+
+.action-buttons {
+    display: grid;
+    gap: 10px;
+}

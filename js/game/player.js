@@ -19,6 +19,19 @@ class Player {
         }
         updateInterface();
     }
+
+    getExpToNextLevel() {
+        return this.level * 100;
+    }
+
+    levelUp() {
+        this.level++;
+        this.maxHealth += 20;
+        this.health = this.maxHealth;
+        this.exp = 0;
+        tg.showAlert(`Уровень повышен! Теперь ваш уровень: ${this.level}`);
+        updateInterface();
+    }
 }
 
 let player;
